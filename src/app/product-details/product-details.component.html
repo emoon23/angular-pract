@@ -1,1 +1,9 @@
 <p>product-details works!</p>
+
+<!-- Updating the ProductDetailsComponent template to display product details-->
+<!-- If a product exists, the <div> renders with a name, price & description -->
+<div *ngIf="product">
+  <h3>{{ product.name }}</h3>
+  <h4>{{ product.price | currency }}</h4>
+  <p>{{ product.description }}</p>
+</div>
