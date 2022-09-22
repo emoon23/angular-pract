@@ -1,0 +1,15 @@
+<h2><b>Wrecking Ball MMA Fighters</b></h2>
+
+<div *ngFor="let fighter of fighters">
+    <h3>
+        <a
+            [title]="fighter.name + ' details'"
+            [routerLink]="['./fighters', fighter.id]"
+        >
+        {{ fighter.name }}
+    </a>
+    </h3>
+
+    <p *ngIf="fighter.style">Style: {{ fighter.style }}</p>
+
+</div>

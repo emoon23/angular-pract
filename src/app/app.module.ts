@@ -11,17 +11,26 @@ import { ProductDetailsComponent } from "./product-details/product-details.compo
 import { CartComponent } from './cart/cart.component';
 import { ShippingComponent } from './shipping/shipping.component';
 import { HttpClientModule } from "@angular/common/http";
+import { AccordionComponent } from "./accordion/accordion.component";
+import { ToastModule } from 'primeng/toast';
+import { TabViewModule } from 'primeng/tabview';
+import { FighterComponent } from './fighter/fighter.component';
+import { PeriodicElementComponent } from "./periodic-element/periodic-element-component";
 
 @NgModule({
   imports: [
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
+    ToastModule,
     RouterModule.forRoot([
       { path: "", component: ProductListComponent },
       { path: "products/:productId", component: ProductDetailsComponent },
       { path: 'cart', component: CartComponent },
-      { path: 'shipping', component: ShippingComponent}
+      { path: 'shipping', component: ShippingComponent},
+      { path: 'accordion', component: AccordionComponent},
+      { path: 'fighter', component: FighterComponent},
+      { path: 'periodic-element', component: PeriodicElementComponent}
     ]),
   ],
   declarations: [
@@ -32,6 +41,9 @@ import { HttpClientModule } from "@angular/common/http";
     ProductDetailsComponent,
     CartComponent,
     ShippingComponent,
+    AccordionComponent,
+    FighterComponent,
+    PeriodicElementComponent
   ],
   bootstrap: [AppComponent],
 })

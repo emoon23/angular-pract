@@ -8,7 +8,7 @@ import { cars } from "../tester";
   styleUrls: ["./test-page.component.css"],
 })
 export class ProductListComponent {
-  cars = cars;
+  cars = [...cars];
 
   share() {
     window.alert("This car has been shared!");
