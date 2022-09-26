@@ -137,10 +137,57 @@ app-top-bar h1 {
 }
 
 table{
-  width: 100%;
+  width: 300%;
+  
+}
+
+tr.periodicElem-detail-row{
+  height: 0;
+}
+
+tr.periodicElem-element-row:not(.periodic-expanded-row):hover{
+  background: whitesmoke;
+}
+
+tr.periodicElem-element-row:not(.periodic-expanded-row):active{
+  background: #efefef;
+}
+
+.periodicElem-element-row td{
+  border-bottom-width: 0;
+}
+
+.periodicElem-element-detail{
+  overflow: hidden;
+  display: flex;
+}
+
+.periodicElem-element-diagram{
+  min-width: 80px;
+  border: 2px solid black;
+  padding: 8px;
+  font-weight: lighter;
+  margin: 8px 0;
+  height: 104px;
+}
+
+.periodicElem-element-symbol{
+  font-weight: bold;
+  font-size: 40px;
+  line-height: normal;
+}
+
+.periodicElem-element-description{
+  padding: 16px;
+}
+
+.periodicElem-element-description-attribution{
+  opacity: 0.5;
 }
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
 */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

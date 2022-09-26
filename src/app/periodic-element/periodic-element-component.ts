@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { animate, state, style, transition, trigger } from '@angular/animations';
+
 
 export interface PeriodicElement{
     name: string;
@@ -44,15 +46,51 @@ const ELEMENT_DATA: PeriodicElement[] = [
         name: 'Carbon',
         weight: 12.0107,
         symbol: 'C'
+    },
+    {
+        position: 7,
+        name: 'Nitrogen',
+        weight: 14.0067,
+        symbol: 'N'
+    },
+    {
+        position: 8,
+        name: 'Oxygen',
+        weight: 15.9994,
+        symbol: 'O'
+    },
+    {
+        position: 9,
+        name: 'Fluorine',
+        weight: 18.9984,
+        symbol: 'F'
+    },
+    {
+        position: 10,
+        name: 'Neon',
+        weight: 20.1797,
+        symbol: 'Ne'
     }
 ];
 
 @Component({
     selector: 'app-periodic-element',
-    templateUrl: './periodic-element-component.html'
+    templateUrl: './periodic-element-component.html',
+    styleUrls: ['./periodic-element-component.css'],
+    animations: [
+        trigger('detailedExpand', [
+            state('collapsed', style({height: '0px', minHeight: '0'})),
+            state('expanded', style({height: '*'})),
+            transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+        ]),
+    ],
 })
 
 export class PeriodicElementComponent{
-    displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
     dataSource = ELEMENT_DATA;
+    displayedColumns: string[] = ['name', 'weight', 'symbol', 'position'];
+    //columnsToDisplayWithExpand = [...this.columnsToDisplay, 'expand'];
+    //expandedElement!: PeriodicElement | null;
+    //columnsToDisplayWithExpand = [...this.columnsToDisplay, 'expand'];
+    //expandedElement!: PeriodicElement | null;
 }

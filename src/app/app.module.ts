@@ -2,6 +2,10 @@ import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { RouterModule } from "@angular/router";
 import { ReactiveFormsModule } from "@angular/forms";
+import { MatTableModule } from "@angular/material/table";
+import { MatExpansionModule } from "@angular/material/expansion";
+import { MatIconModule } from "@angular/material/icon";
+import { MatTableDataSource } from "@angular/material/table";
 
 import { AppComponent } from "./app.component";
 import { TopBarComponent } from "./top-bar/top-bar.component";
@@ -16,6 +20,8 @@ import { ToastModule } from 'primeng/toast';
 import { TabViewModule } from 'primeng/tabview';
 import { FighterComponent } from './fighter/fighter.component';
 import { PeriodicElementComponent } from "./periodic-element/periodic-element-component";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   imports: [
@@ -23,6 +29,9 @@ import { PeriodicElementComponent } from "./periodic-element/periodic-element-co
     HttpClientModule,
     ReactiveFormsModule,
     ToastModule,
+    MatTableModule,
+    MatExpansionModule,
+    MatIconModule,
     RouterModule.forRoot([
       { path: "", component: ProductListComponent },
       { path: "products/:productId", component: ProductDetailsComponent },
@@ -32,6 +41,7 @@ import { PeriodicElementComponent } from "./periodic-element/periodic-element-co
       { path: 'fighter', component: FighterComponent},
       { path: 'periodic-element', component: PeriodicElementComponent}
     ]),
+    BrowserAnimationsModule,
   ],
   declarations: [
     AppComponent,
